@@ -1,22 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { PruebaContext } from './context/PruebaContext';
+import { AppRouter } from './routing/AppRouter';
 
 function App() {
+
+  const curso = {
+    id: 1,
+    titulo: "Máster en TypeScript",
+    contenido: "Muchas horas de contenido..."
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <PruebaContext.Provider value={curso}>
+          <AppRouter />
+        </PruebaContext.Provider>
+          
       </header>
     </div>
   );
